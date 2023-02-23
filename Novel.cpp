@@ -29,8 +29,8 @@ std::string Novel::getCharacterListString() const
             character_list += novel_characters_[i];
             character_list += " ";
     }
-    }
     return character_list;
+}
 
 void Novel::addCharacter(const std::string &novel_character)
 {
@@ -70,11 +70,11 @@ void Novel::calculateAverageRating()
     double review_total = 0.0;
     for(int i = 0; i < novel_reviews_.size(); i++)
     {
-        if(i == novel_reviews.size() - 1)
+        if(i == novel_reviews_.size() - 1)
         {
             review_total/novel_reviews_.size();
             break;
         }
-        review_total += novel_reviews_[i].rating_;
+        review_total += novel_reviews_[i].score_;
     }
 }
