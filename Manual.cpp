@@ -23,12 +23,14 @@ bool Manual::setWebsite(const std::string &website)
     if(std::regex_match(website,test))
     {
         manual_url_ = website;
+        manual_website_ = true;
     }
     else
     {
         manual_url_ = "Broken Link";
+        manual_website_ = true;
+
     }
-    manual_website_ = true;
     return manual_website_;
 }
 
