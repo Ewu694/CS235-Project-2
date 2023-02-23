@@ -36,7 +36,7 @@ class Textbook: public Book
     @post      : The private members are set to the values of the
                 corresponding parameters.
     */
-    Textbook::Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital = false, grade_level textbook_grade_level = NONE, bool has_review_questions = false);
+    Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital = false, grade_level textbook_grade_level = NONE, bool has_review_questions = false);
 
     /**
     @param  : a reference to a string representing the the subject of the book
