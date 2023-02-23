@@ -1,6 +1,4 @@
-    #include "Book.hpp"
     #include "Novel.hpp"
-    #include <string>
 
     Novel::Novel(std::string title, std::string author, int page_count, std::string novel_genre, bool is_digital, bool novel_film_adaptation):Book(title, author, page_count, is_digital), novel_genre_{novel_genre}, novel_film_adaptation_{novel_film_adaptation}
     {
@@ -24,7 +22,7 @@
     std::string Novel::getCharacterListString() const
     {
         std::string character_list = "";
-        for(int i = 0; i < novel_characters_.size(); i++)
+        for(size_t i = 0; i < novel_characters_.size(); i++)
         {
                 character_list += novel_characters_[i];
                 character_list += " ";
@@ -34,7 +32,7 @@
 
     void Novel::addCharacter(const std::string &novel_character)
     {
-        novel_characters_.insert(novel_characters_.begin() + 1, novel_character);
+        novel_characters_.push_back(novel_character);
     }
 
     bool Novel::hasFilmAdaptation() const
@@ -62,13 +60,13 @@
 
     void Novel::addReview(const review &novel_review)
     {
-        novel_reviews_.insert(novel_reviews_.begin() + 1, novel_review);
+        novel_reviews_.push_back(novel_review);
     }
 
     void Novel::calculateAverageRating()
     {
         double review_total = 0.0;
-        for(int i = 0; i < novel_reviews_.size(); i++)
+        for(size_t i = 0; i < novel_reviews_.size(); i++)
         {
             review_total += novel_reviews_[i].score_;
         }
