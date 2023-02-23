@@ -72,5 +72,5 @@
         {
             review_total += novel_reviews_[i].score_;
         }
-            novel_average_rating_ = review_total/novel_reviews_.size();
+        novel_average_rating_ = review_total/novel_reviews_.size();
     }
