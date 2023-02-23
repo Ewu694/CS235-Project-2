@@ -65,7 +65,7 @@ class Textbook: public Book
     /**
     @post   : sets the review question flag to True
     **/
-    void setReviewQuestions() const;
+    void setReviewQuestions();
 
     /**
     @return  : the flag indicating if the texbook has review questions
