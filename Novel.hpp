@@ -5,6 +5,7 @@
 #include <string>
 #include "Book.hpp"
 #include <vector>
+#include <string>
 
 struct review {
     double score_;
@@ -15,8 +16,8 @@ class Novel: public Book
 {
     private:
     std::string novel_genre_;
-    vector<std::string> novel_characters_;
-    vector<review> novel_reviews_;
+    std::vector<std::string> novel_characters_;
+    std::vector<review> novel_reviews_;
     double novel_average_rating_;
     bool novel_film_adaptation_;
 
@@ -38,7 +39,7 @@ class Novel: public Book
     @param     : A flag indicating whether there is a film adaptation
                 for this novel with DEFAULT VALUE False (a Boolean)
     */
-   Novel::Novel(std::string title, std::string author, int page_count, std::string novel_genre, bool is_digital = false, bool novel_film_adaptation);
+   Novel(std::string title, std::string author, int page_count, std::string novel_genre, bool is_digital = false, bool novel_film_adaptation = false);
 
    /**
    @return   : the value of the genre private member
@@ -52,11 +53,10 @@ class Novel: public Book
    **/
    void setGenre(const std::string &novel_genre);
 
-
     /**
     @return   : the vector containing the list of characters for this novel
     **/
-    vector<std::string> getCharacterList() const;
+    std::vector<std::string> getCharacterList() const;
 
     /**
     @return    : a string of all the characters in the
