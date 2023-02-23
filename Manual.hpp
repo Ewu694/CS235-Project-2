@@ -41,7 +41,7 @@ class Manual: public Book
                 If the URL is ill-formatted, the website is set to
                 empty string and the website flag is set to False.
     */
-    Manual::Manual(std::string title, std::string author, int page_count, bool is_digital = false, std::string device_name, std::string url = "", bool visual_aid = false;):
+    Manual(std::string title, std::string author, int page_count, std::string device_name, bool is_digital = false, std::string url = "", bool visual_aid = false);
 
     /**
     @param  : a reference to a string representing the device
