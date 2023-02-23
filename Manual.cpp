@@ -3,7 +3,7 @@
 #include <regex>
 #include <string>
 
-Manual::Manual(std::string title, std::string author, int page_count, std::string device_name, bool is_digital, std::string manual_url, bool visual_aid):Book(title, author, page_count, is_digital), device_name_{device_name}, manual_url_{manual_url}, manual_visual_aid_{visual_aid}
+Manual::Manual(std::string title, std::string author, int page_count, std::string device_name, bool is_digital, std::string url, bool visual_aid):Book(title, author, page_count, is_digital), device_name_{device_name}, manual_url_{url}, manual_visual_aid_{visual_aid}
 {
 }
 
