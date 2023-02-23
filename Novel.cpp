@@ -2,51 +2,57 @@
 #include "Novel.hpp"
 #include <string>
 
-Novelbook::Novelbook(std::string novel_genre, bool novel_film_adaptation):Book(title, author, page_count, is_digital), novel_genre_(novel_genre), novel_film_adaptation_(novel_film_adaptation)
+Novel::Novel(std::string title, std::string author, int page_count, std::string novel_genre, bool is_digital, bool novel_film_adaptation):Book(title, author, page_count, is_digital), novel_genre_{novel_genre}, novel_film_adaptation_{novel_film_adaptation}
 {
 }
 
-std::string getGenre() const
+std::string Novel::getGenre() const
 {
     return novel_genre_;
 }
 
-void setGenre(const std::string &novel_genre)
+void Novel::setGenre(const std::string &novel_genre)
 {
     novel_genre_ = novel_genre;
 }
 
-std::vector<std::string> getCharacterList() const
+std::vector<std::string> Novel::getCharacterList() const
 {
     return novel_characters_;
 }
 
-std::string getCharacterListString() const
+std::string Novel::getCharacterListString() const
 {
-    return 
-}
+    std::string character_list = "";
+    for(int i = 0; i < novel_characters_.size(); i++)
+    {
+            character_list += novel_characters_[i];
+            character_list += " ";
+    }
+    }
+    return character_list;
 
-void addCharacter(const std::string &novel_character)
+void Novel::addCharacter(const std::string &novel_character)
 {
     novel_characters_.insert(novel_characters_.begin() + 1, novel_character);
 }
 
-bool hasFilmAdaptation() const
+bool Novel::hasFilmAdaptation() const
 {
     return novel_film_adaptation_;
 }
 
-void setFilmAdaptation()
+void Novel::setFilmAdaptation()
 {
     novel_film_adaptation_ = true;
 }
 
-double getAverageRating() const
+double Novel::getAverageRating() const
 {
     return novel_average_rating_;
 }
 
-review createReview(const double &novel_score, const std::string &novel_rating)
+review Novel::createReview(const double &novel_score, const std::string &novel_rating)
 {
     review new_novel_review;
     new_novel_review.score_ = novel_score;
@@ -54,12 +60,12 @@ review createReview(const double &novel_score, const std::string &novel_rating)
     return new_novel_review;
 }
 
-void addReview(const review &novel_review)
+void Novel::addReview(const review &novel_review)
 {
     novel_reviews_.insert(novel_reviews_.begin() + 1, novel_review);
 }
 
-void calculateAverageRating()
+void Novel::calculateAverageRating()
 {
     double review_total = 0.0;
     for(int i = 0; i < novel_reviews_.size(); i++)
