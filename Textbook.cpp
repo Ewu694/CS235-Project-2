@@ -2,7 +2,7 @@
 #include "Book.hpp"
 #include <string>
 
-Textbook::Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital, grade_level textbook_grade_level, bool has_review_questions):Book(title, author, page_count, is_digital), textbook_subject_{subject}, textbook_grade_level_{textbook_grade_level}, has_review_questions_{has_review_questions}
+Textbook::Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital, grade_level textbook_grade_level, bool has_review_questions):Book(title, author, page_count, is_digital), textbook_subject_(subject), textbook_grade_level_(textbook_grade_level), has_review_questions_(has_review_questions)
 {
 }
 
