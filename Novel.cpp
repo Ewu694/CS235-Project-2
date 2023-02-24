@@ -1,6 +1,6 @@
     #include "Novel.hpp"
 
-    Novel::Novel(std::string title, std::string author, int page_count, std::string novel_genre, bool is_digital, bool novel_film_adaptation):Book(title, author, page_count, is_digital), novel_genre_{novel_genre}, novel_film_adaptation_{novel_film_adaptation}
+    Novel::Novel(std::string title, std::string author, int page_count, std::string novel_genre, bool is_digital, bool novel_film_adaptation):Book(title, author, page_count, is_digital), novel_genre_(novel_genre), novel_film_adaptation_(novel_film_adaptation)
     {
     }
 
